@@ -2,6 +2,7 @@
  * App palette — flower-inspired habit tracker theme.
  */
 export const colors = {
+  white: '#FFFFFF',
   petalBlue: '#5BA4E5',
   highlight: '#7BBDEE',
   /** Primary center yellow */

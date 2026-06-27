@@ -6,9 +6,11 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function Index() {
   return (
-    <ScreenContainer style={{ padding: 16 }}>
-      <View style={styles.content}>
+    <ScreenContainer style={styles.screen}>
+      <View style={styles.header}>
         <Text style={styles.title}>My Weekly Habits</Text>
+      </View>
+      <View style={styles.content}>
         <ProgressBar max={100} current={30} />
       </View>
     </ScreenContainer>
@@ -16,6 +18,15 @@ export default function Index() {
 }
 
 const styles = StyleSheet.create({
+  screen: {
+    paddingHorizontal: 16,
+  },
+  header: {
+    paddingTop: 12,
+    paddingBottom: 16,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: colors.highlight,
+  },
   content: {
     flex: 1,
     alignItems: 'center',
@@ -23,7 +34,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontFamily: fonts.regular,
-    color: colors.highlight,
+    color: colors.white,
     fontSize: 22,
   },
 });

@@ -1,6 +1,7 @@
 import { colors } from '@/constants/colors';
 import { type ReactNode } from 'react';
-import { StyleSheet, View, type ViewProps } from 'react-native';
+import { StyleSheet, type ViewProps } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export type ScreenContainerProps = ViewProps & {
   children: ReactNode;
@@ -8,9 +9,9 @@ export type ScreenContainerProps = ViewProps & {
 
 export function ScreenContainer({ style, children, ...rest }: ScreenContainerProps) {
   return (
-    <View style={[styles.root, style]} {...rest}>
+    <SafeAreaView style={[styles.root, style]} edges={['top', 'right', 'bottom', 'left']} {...rest}>
       {children}
-    </View>
+    </SafeAreaView>
   );
 }
 
